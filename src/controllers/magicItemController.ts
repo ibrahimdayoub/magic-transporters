@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { addMagicItemValidator } from '../validations/magicItemValidation';
 import MagicItem from '../models/magicItem';
 
+// Add Magic Item
 export const addMagicItem = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, weight } = req.body;

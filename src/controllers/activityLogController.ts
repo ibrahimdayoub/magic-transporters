@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import ActivityLog from '../models/activityLog';
 
+// Get Activities Log
 export const getActivitiesLog = async (req: Request, res: Response): Promise<void> => {
     try {
         const activitesLog = await ActivityLog.find();

@@ -4,6 +4,7 @@ import MagicMover from '../models/magicMover';
 import MagicItem from '../models/magicItem';
 import ActivityLog from '../models/activityLog';
 
+// Add Magic Mover
 export const addMagicMover = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, weightLimit, energy } = req.body;
@@ -30,6 +31,7 @@ export const addMagicMover = async (req: Request, res: Response): Promise<void> 
     }
 };
 
+// Load Magic Mover
 export const loadMagicMover = async (req: Request, res: Response): Promise<void> => {
     try {
         const moverId = parseInt(req.params.id);
@@ -92,6 +94,7 @@ export const loadMagicMover = async (req: Request, res: Response): Promise<void>
     }
 };
 
+// Start Mission
 export const startMission = async (req: Request, res: Response): Promise<void> => {
     try {
         const moverId = parseInt(req.params.id);
@@ -119,6 +122,7 @@ export const startMission = async (req: Request, res: Response): Promise<void> =
     }
 };
 
+// End Mission
 export const endMission = async (req: Request, res: Response): Promise<void> => {
     try {
         const moverId = parseInt(req.params.id);
@@ -147,6 +151,7 @@ export const endMission = async (req: Request, res: Response): Promise<void> => 
     }
 };
 
+// Get Top Movers
 export const getTopMovers = async (req: Request, res: Response): Promise<void> => {
     try {
         const sortedMovers = await MagicMover.find().sort({ missionsCompleted: -1 });
@@ -159,6 +164,7 @@ export const getTopMovers = async (req: Request, res: Response): Promise<void> =
 
 // Helper
 
+// Log Activity
 const logActivity = async (mover: any) => {
     const activityLog = new ActivityLog({
         id: await ActivityLog.countDocuments() + 1,

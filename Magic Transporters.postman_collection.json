@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "f1c98ac3-dc1e-4268-8074-18b6cfc87745",
+		"name": "Magic Transporters",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Magic Mover",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Mover 1\",\r\n    \"weightLimit\":100,\r\n    \"energy\":1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/magic-movers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-movers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Magic Mover",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Mover 1\",\r\n    \"weightLimit\":100,\r\n    \"energy\":1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/magic-movers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-movers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "206"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ce-42n/br27FZb77ogou6+iO9C+iHQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 06:55:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"newMover\": {\n        \"id\": 1,\n        \"name\": \"Mover 1\",\n        \"weightLimit\": 100,\n        \"energy\": 1000,\n        \"state\": \"resting\",\n        \"missionsCompleted\": 0,\n        \"_id\": \"667e5e6979d437c8ce06eb57\",\n        \"currentItems\": [],\n        \"__v\": 0\n    },\n    \"message\": \"Mover added successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Magic Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Item 1\",\r\n    \"weight\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/magic-items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-items"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Magic Item",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Item 1\",\r\n    \"weight\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/magic-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-items"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7d-22XLuaEmIzAeT7UcSk8N9xeKYV8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 06:57:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"newItem\": {\n        \"id\": 5,\n        \"name\": \"Item 1\",\n        \"weight\": 10,\n        \"_id\": \"667e5ecb79d437c8ce06eb5a\",\n        \"__v\": 0\n    },\n    \"message\": \"Item added successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Load Magic Mover",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\":[1,2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/magic-movers/1/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-movers",
+						"1",
+						"load"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Load Magic Mover",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\":[1,2,3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/magic-movers/1/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-movers",
+								"1",
+								"load"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "364"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16c-66RcSYNyS31pMpsgZe4El6aGwy0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 06:59:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mover\": {\n        \"_id\": \"667e5e6979d437c8ce06eb57\",\n        \"id\": 1,\n        \"name\": \"Mover 1\",\n        \"weightLimit\": 100,\n        \"energy\": 940,\n        \"state\": \"loading\",\n        \"missionsCompleted\": 0,\n        \"currentItems\": [\n            {\n                \"id\": 1,\n                \"weight\": 10,\n                \"_id\": \"667e5f5279d437c8ce06eb5e\"\n            },\n            {\n                \"id\": 2,\n                \"weight\": 20,\n                \"_id\": \"667e5f5279d437c8ce06eb60\"\n            },\n            {\n                \"id\": 3,\n                \"weight\": 30,\n                \"_id\": \"667e5f5279d437c8ce06eb62\"\n            }\n        ],\n        \"__v\": 1\n    },\n    \"message\": \"Items loaded successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Start Mission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/magic-movers/1/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-movers",
+						"1",
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Start Mission",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/magic-movers/1/start",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-movers",
+								"1",
+								"start"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "372"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"174-F4wNs5hygO6PYr8VBKz48Almkv4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 07:00:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mover\": {\n        \"_id\": \"667e5e6979d437c8ce06eb57\",\n        \"id\": 1,\n        \"name\": \"Mover 1\",\n        \"weightLimit\": 100,\n        \"energy\": 940,\n        \"state\": \"on a mission\",\n        \"missionsCompleted\": 0,\n        \"currentItems\": [\n            {\n                \"id\": 1,\n                \"weight\": 10,\n                \"_id\": \"667e5f5279d437c8ce06eb5e\"\n            },\n            {\n                \"id\": 2,\n                \"weight\": 20,\n                \"_id\": \"667e5f5279d437c8ce06eb60\"\n            },\n            {\n                \"id\": 3,\n                \"weight\": 30,\n                \"_id\": \"667e5f5279d437c8ce06eb62\"\n            }\n        ],\n        \"__v\": 1\n    },\n    \"message\": \"Mission started successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "End Mission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/magic-movers/1/end",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-movers",
+						"1",
+						"end"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "End Mission",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/magic-movers/1/end",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-movers",
+								"1",
+								"end"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-zze6CJkPiOLDIwAsVUiUqDTukKg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 07:01:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mover\": {\n        \"_id\": \"667e5e6979d437c8ce06eb57\",\n        \"id\": 1,\n        \"name\": \"Mover 1\",\n        \"weightLimit\": 100,\n        \"energy\": 940,\n        \"state\": \"done\",\n        \"missionsCompleted\": 1,\n        \"currentItems\": [],\n        \"__v\": 2\n    },\n    \"message\": \"Mission completed successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Top Movers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/magic-movers/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"magic-movers",
+						"top"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Top Movers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/magic-movers/top",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"magic-movers",
+								"top"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "365"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16d-f1q+rqpZ3/LT/b/wks8AoypM9aQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 07:03:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sortedMovers\": [\n        {\n            \"_id\": \"667e60215429112dedb4d766\",\n            \"id\": 2,\n            \"name\": \"Mover 2\",\n            \"weightLimit\": 200,\n            \"energy\": 1880,\n            \"state\": \"done\",\n            \"missionsCompleted\": 2,\n            \"currentItems\": [],\n            \"__v\": 2\n        },\n        {\n            \"_id\": \"667e5e6979d437c8ce06eb57\",\n            \"id\": 1,\n            \"name\": \"Mover 1\",\n            \"weightLimit\": 100,\n            \"energy\": 940,\n            \"state\": \"done\",\n            \"missionsCompleted\": 1,\n            \"currentItems\": [],\n            \"__v\": 2\n        }\n    ],\n    \"message\": \"Movers fetched successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Activity Logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/activity-logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"activity-logs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Activity Logs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/activity-logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"activity-logs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "707"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c3-MQpd6g9SgdRA7EP6eI2jHbVisBQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 07:05:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"activitesLog\": [\n        {\n            \"_id\": \"667e5f5279d437c8ce06eb65\",\n            \"id\": 1,\n            \"date\": \"2024-06-28T06:59:30.070Z\",\n            \"moverId\": 1,\n            \"state\": \"loading\",\n            \"magicItems\": [\n                {\n                    \"id\": 1,\n                    \"_id\": \"667e5f5279d437c8ce06eb66\"\n                },\n                {\n                    \"id\": 2,\n                    \"_id\": \"667e5f5279d437c8ce06eb67\"\n                },\n                {\n                    \"id\": 3,\n                    \"_id\": \"667e5f5279d437c8ce06eb68\"\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"667e5f8f79d437c8ce06eb70\",\n            \"id\": 2,\n            \"date\": \"2024-06-28T07:00:31.411Z\",\n            \"moverId\": 1,\n            \"state\": \"on a mission\",\n            \"magicItems\": [\n                {\n                    \"id\": 1,\n                    \"_id\": \"667e5f8f79d437c8ce06eb71\"\n                },\n                {\n                    \"id\": 2,\n                    \"_id\": \"667e5f8f79d437c8ce06eb72\"\n                },\n                {\n                    \"id\": 3,\n                    \"_id\": \"667e5f8f79d437c8ce06eb73\"\n                }\n            ],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"667e5fc179d437c8ce06eb7b\",\n            \"id\": 3,\n            \"date\": \"2024-06-28T07:01:21.388Z\",\n            \"moverId\": 1,\n            \"state\": \"done\",\n            \"magicItems\": [],\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Activites log fetched successfully\"\n}"
+				}
+			]
+		}
+	]
+}
